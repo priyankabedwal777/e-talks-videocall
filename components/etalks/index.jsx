@@ -248,7 +248,7 @@ const EasyCampusEtalks = () => {
               </div>
               <div className='flex justify-between items-end h-[452px]'>
                 <div className='e-talk-morphism-1'>
-                  <h5>Dr. Ayushi</h5>
+                  <h5>Dr. Ayushidf</h5>
                 </div>
                 <div className='e-talk-morphism-1'>
                   <Image src={mute} alt='mute' className='w-[22px] h-[22px]' />

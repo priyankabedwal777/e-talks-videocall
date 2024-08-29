@@ -4,6 +4,7 @@ import etalkbg from '../../public/images/etalkbg.webp';
 import logo1 from '../../public/images/logo1.webp';
 import mute from '../../public/svg/mute.svg';
 import ScreenButtons from './screenbuttons';
+import domyimg from "../../public/images/domy1.webp";
 
 const view2students = [
   "Student Name", "Aarti", "Vikash", "Pushpinder", "Harry", "Herlyn",
@@ -19,15 +20,14 @@ const view3students = [
 
 const EasyCampusEtalks = () => {
   const [currentView, setCurrentView] = useState(1);
-//   const getClassNames = (view) => {
-//     return view === currentView ? 'bg-[#51a9ff] text-[#51a9ff]' : 'bg-[#1e336a] text-[#1e336a]';
-//   };
+
   const activeBgColor = '#51a9ff';
   const inactiveBgColor = '#1e336a';
   const activeTextColor = '#51a9ff';
   const inactiveTextColor = '#1e336a';
 
   const renderStudentView2 = () => (
+    <>
     <div className='grid grid-cols-1 lg:grid-cols-5 gap-1'>
       {view2students.map((student, index) => (
         <div key={index} className='video-overlay-view2 flex justify-between items-end text-[#fff]'>
@@ -40,9 +40,11 @@ const EasyCampusEtalks = () => {
         </div>
       ))}
     </div>
+    </>
   );
 
   const renderStudentView3 = () => (
+    <>
     <div className='grid grid-cols-2 gap-[5px]'>
       <div className='video-overlay-2 text-[#fff]'>
         <div className='flex items-center mt-3'>
@@ -51,7 +53,7 @@ const EasyCampusEtalks = () => {
             <h5>Live</h5>
           </div>
         </div>
-        <div className='flex justify-between items-end h-[450px]'>
+        <div className='flex justify-between items-end h-[543px]'>
           <div className='e-talk-morphism-1'>
             <h5>Dr. Ayushi</h5>
           </div>
@@ -73,10 +75,12 @@ const EasyCampusEtalks = () => {
         ))}
       </div>
     </div>
+    </>
   );
 
   const renderStudentView4 = () => (
-    <div className='grid grid-cols-1 lg:grid-cols-2 gap-3'>
+  <>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-3'>
     <div className='video-overlay-4 text-[#fff]'>
       <div className='flex items-center mt-3'>
         <Image src={logo1} alt='logo1' className='w-14 h-14 mx-3' />
@@ -84,12 +88,12 @@ const EasyCampusEtalks = () => {
           <h5>Live</h5>
         </div>
       </div>
-      <div className='flex justify-between items-end h-[178px]'>
+      <div className='flex justify-between items-end h-[236px]'>
         <div className='e-talk-morphism-1'>
           <h5>Miss. Mehak</h5>
         </div>
         <div className='e-talk-morphism-1'>
-          <Image src={mute} alt='mute' className='w-[22px] h-[22px]' />
+          <Image src={mute} alt='mute' className='w-[22px] h-[22px]'/>
         </div>
       </div>
     </div>
@@ -104,20 +108,16 @@ const EasyCampusEtalks = () => {
       </div>
     ))}
   </div>
-  
+  </>
   );
 
   return (
     <div className='etalk-overlay'>
       <Image src={etalkbg} alt='etalkbg' className='h-[125vh] w-full relative' />
-      <div className='absolute inset-0 flex justify-center items-center'>
-       
-       
+      <div className='absolute inset-0 flex justify-center items-center mb-[5rem]'>
       <div className='mr-5'>
       {/* Button 1 */}
-      <div
-        // className='mb-10 cursor-pointer'
-          className='mb-10 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-110'
+      <div className='mb-10 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-110'
         onClick={() => setCurrentView(1)}
       >
         <svg
@@ -148,8 +148,8 @@ const EasyCampusEtalks = () => {
           <div
             key={index}
             className={`p-[6px] ${
-              index === 0 ? 'rounded-ss-xl' : ''
-            } ${index === 2 ? 'rounded-se-xl' : ''}`}
+              index === 0 ? 'rounded-ss-lg' : ''
+            } ${index === 2 ? 'rounded-se-lg' : ''}`}
             style={{
               backgroundColor: currentView === 2 ? activeBgColor : inactiveBgColor,
             }}
@@ -168,8 +168,8 @@ const EasyCampusEtalks = () => {
           <div
             key={index}
             className={`p-[6px] ${
-              index === 0 ? 'rounded-es-xl' : ''
-            } ${index === 2 ? 'rounded-ee-xl' : ''}`}
+              index === 0 ? 'rounded-es-lg' : ''
+            } ${index === 2 ? 'rounded-ee-lg' : ''}`}
             style={{
               backgroundColor: currentView === 2 ? activeBgColor : inactiveBgColor,
             }}
@@ -184,7 +184,7 @@ const EasyCampusEtalks = () => {
       >
         <div className='flex'>
           <div
-            className='p-[6px] rounded-s-xl'
+            className='p-[6px] rounded-s-lg'
             style={{
               backgroundColor: currentView === 3 ? activeBgColor : inactiveBgColor,
             }}
@@ -198,7 +198,7 @@ const EasyCampusEtalks = () => {
         </div>
         <div className='grid gap-[1px]'>
           <div
-            className='p-[6px] rounded-se-xl'
+            className='p-[6px] rounded-se-lg'
             style={{
               backgroundColor: currentView === 3 ? activeBgColor : inactiveBgColor,
             }}
@@ -210,7 +210,7 @@ const EasyCampusEtalks = () => {
             }}
           ></div>
           <div
-            className='p-[5px] rounded-ee-xl'
+            className='p-[5px] rounded-ee-lg'
             style={{
               backgroundColor: currentView === 3 ? activeBgColor : inactiveBgColor,
             }}
@@ -220,14 +220,14 @@ const EasyCampusEtalks = () => {
 
       {/* Button 4 */}
       <div
-        className='grid grid-cols-2 gap-[1.5px] my-2 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-110'
+        className='grid grid-cols-2 gap-[1px] cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-110'
         onClick={() => setCurrentView(4)}
       >
-        {['rounded-ss-xl', 'rounded-se-xl', 'rounded-es-xl', 'rounded-ee-xl'].map(
+        {['rounded-ss-lg', 'rounded-se-lg', 'rounded-es-lg', 'rounded-ee-lg'].map(
           (className, index) => (
             <div
               key={index}
-              className={`p-[9px] ${className}`}
+              className={`p-[8.5px] ${className}`}
               style={{
                 backgroundColor: currentView === 4 ? activeBgColor : inactiveBgColor,
               }}
@@ -246,9 +246,9 @@ const EasyCampusEtalks = () => {
                   <h5>Live</h5>
                 </div>
               </div>
-              <div className='flex justify-between items-end h-[452px]'>
+              <div className='flex justify-between items-end h-[543px]'>
                 <div className='e-talk-morphism-1'>
-                  <h5>Dr. Ayushidf</h5>
+                  <h5>Dr. Ayushi</h5>
                 </div>
                 <div className='e-talk-morphism-1'>
                   <Image src={mute} alt='mute' className='w-[22px] h-[22px]' />
@@ -275,47 +275,5 @@ const EasyCampusEtalks = () => {
     </div>  
   );
 };
-
-<style jsx>{`
-  .button-container div {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .button-container div:hover {
-    transform: scale(1.05);
-  }
-
-  .button-container div:hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent);
-    opacity: 0.6;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-  }
-
-  .button-container div:hover::after {
-    content: '';
-    position: absolute;
-    bottom: -100%;
-    left: 50%;
-    width: 150%;
-    height: 150%;
-    background-color: rgba(255, 255, 255, 0.15);
-    transform: translateX(-50%) rotate(45deg);
-    transition: bottom 0.3s ease;
-  }
-
-  .button-container div:hover::after {
-    bottom: 100%;
-  }
-
-`}</style>
 
 export default EasyCampusEtalks;
